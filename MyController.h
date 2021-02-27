@@ -20,8 +20,9 @@ public:
 		if (typeid(*view) == typeid(MyView)) {
 		((MyView*)view)->setWeek(week);
 		((MyView*)view)->displayTask(Sunday);
+		
+
 	}
-		std::cout<<week->getLastWeek();
 		start();
 	}
 	virtual void start() {
