@@ -40,6 +40,9 @@ public:
 		
 	}
 		
+	void printTask(){
+		
+	}
 	int getCurrentNumDay() { return _currentDay; }
 	void addTask(Task* task){
 		
