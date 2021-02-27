@@ -5,8 +5,6 @@
 #include "Task.h"
 
 
-
-
 class PermanentTask : public Task {
 public:
 	PermanentTask(){
