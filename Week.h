@@ -41,7 +41,14 @@ public:
 	}
 		
 	void printTask(){
-		
+		for (auto const& p : _tasks){
+			
+	 	 p.second->print();
+		  std::cout<<"\n";
+		}
+
+   
+
 	}
 	int getCurrentNumDay() { return _currentDay; }
 	void addTask(Task* task){

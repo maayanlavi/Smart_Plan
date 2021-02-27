@@ -31,6 +31,9 @@ public:
 		_hour = new fullHour();
 		_nameDay = Sunday;
 	}
+	void print(){
+		_dayTask->print();
+	}
 	std::string getNameTaskByStartHour(int startHour) {
 		if(_dayTask!=nullptr)
 			return _dayTask->getNameTaskByTimeStart(startHour);

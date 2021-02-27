@@ -28,8 +28,11 @@
 	// 	}
 
 	void mySQLModel::setTask(TYPE_TASK typeTask, std::string inputUser){
+		w->printTask();
 		if(typeTask == Permanent){
+			
 			PermanentTask *task = new PermanentTask(inputUser);
+			w->addTask(task);
 			std::string name =task->getTaskName();
 			int end = task->getTaskEnd();
 			int start = task->getTaskStart();
@@ -65,5 +68,6 @@
             saveTaskToFile(mergeTask);
 
 		}
-        		
+        std::cout<<"print after add "<<"\n";
+		w->printTask();		
 	}
