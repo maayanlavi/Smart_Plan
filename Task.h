@@ -58,14 +58,7 @@ public:
 			break;
 		case Saturday:
 			return "Saturday";
-<<<<<<< HEAD
 			break;
-		
-		default : "eror";
-		
-=======
-			break;	
->>>>>>> 44d637c37c4c8d480b413cccc72df166b6d27209
 		}
 		
 	}

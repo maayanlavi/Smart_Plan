@@ -37,6 +37,9 @@ public:
 		else { return "          "; }
 			
 	}
+	void addTask(Task* task){
+			_dayTask->setTask(task);
+	}
 	void displayDay(int dayCurrentNum) {
 		
 		std::cout << std::setw(23) << enumToString(this->_nameDay) << "(" << dayCurrentNum << ")";

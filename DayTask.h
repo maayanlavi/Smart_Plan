@@ -19,7 +19,10 @@ public:
 		_tasks.push_back(p);
 
 	}
-	void setTask(Task* t) {}
+	
+	void setTask(Task* t) {
+		_tasks.push_back(t);
+	}
 	// Task* getTask(int time) {}
 	// std::vector<Task*> getTaskDay() {}
 	void displayDay() {}

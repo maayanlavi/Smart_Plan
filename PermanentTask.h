@@ -65,15 +65,16 @@ public:
 		catch(...){
  				return false;
 		}
-<<<<<<< HEAD
-		return true;
-	}
-=======
->>>>>>> 44d637c37c4c8d480b413cccc72df166b6d27209
 
 		return true;
-
 	}
+	
+
+
+	
+
+	
+	
 
 
 };

@@ -40,7 +40,10 @@ public:
 	}
 		
 	int getCurrentNumDay() { return _currentDay; }
-	
+	void addTask(Task* task){
+		
+		 //_tasks[task->getTaskDay()]
+	}
 	int  getNumberOfDays(int month, int year)
 	{
 		//leap year condition, if month is 2
