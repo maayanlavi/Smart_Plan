@@ -2,9 +2,7 @@
 
 	void mySQLModel::saveTaskToFile(std::string taskToFile)
     {
-        myfile << "New Task:" << std::endl;
         myfile << taskToFile << std::endl;
-        myfile << "---------" << std::endl;
         this->~mySQLModel();
     }
 
@@ -32,7 +30,6 @@
 	void mySQLModel::setTask(TYPE_TASK typeTask, std::string inputUser){
 		if(typeTask == Permanent){
 			PermanentTask *task = new PermanentTask(inputUser);
-            std::cout << task->getTaskEnd() << task->getTaskStart() << task->getTaskCategory() << task->getTaskDay() ;
 			std::string name =task->getTaskName();
 			int end = task->getTaskEnd();
 			int start = task->getTaskStart();
@@ -46,12 +43,11 @@
             mergeTask+=strDay;
             mergeTask+=strCat;
             saveTaskToFile(mergeTask);
-
 		}
 		else{
 			OccasionalTask* task= new OccasionalTask(inputUser);
 			std::string name =task->getTaskName();
-			std::pair<int,int> startEnd = task->schedulingAlgorithm(task->getDeadline());
+			std::pair<int,int> startEnd = task->schedulingAlgorithm(task ->getTaskDay(), task->getDeadline(), myfile);
 			int start= startEnd.first;
 			int end =startEnd.second;
 			Category category = task->getTaskCategory();
