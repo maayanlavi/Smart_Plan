@@ -16,7 +16,6 @@ public:
 	OccasionalTask(std::string str)
 		: Task()
 	{
-		std::cout << str;
 		std::vector<std::string> arr;
 		arr = split(str, ",");
 		_name= arr[0];
@@ -50,9 +49,11 @@ public:
 std::pair<int, int> schedulingAlgorithm(int deadline){
 	//TO DO impliment this algoritham
 	//for tests the algoritham return deafult value
+
 	 return std::make_pair(3, 4);
 }
 int getDeadline(){return _HourDeadline;}
+
 friend std::ostream& operator <<(std::ostream& os, const OccasionalTask& o);
 private:
 	

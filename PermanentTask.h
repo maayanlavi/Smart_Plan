@@ -22,7 +22,6 @@ public:
 				std::cout << "error";
 			}
 			else{
-				std::cout << str;
 				std::vector<std::string> arr;
 				arr = split(str, ",");
 				_name = arr[0];
@@ -38,6 +37,7 @@ public:
 	bool checkValidation(std::string strInputUser){
 		std::vector<std::string> vec;
 		vec = split(strInputUser, ",");
+
 		if (vec.size() != 5){
 			return false;
 		}
@@ -46,7 +46,7 @@ public:
 			return false;
 		}
 		DayName d= stringDay(vec[2]);
-		if(d==Error){
+		if(d == Error){
 			return false;
 		}
 		try{
@@ -56,8 +56,10 @@ public:
 		catch(...){
  				return false;
 		}
-	}
 
+		return true;
+
+	}
 
 
 };
