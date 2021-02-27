@@ -135,6 +135,5 @@ private:
 	int _currentYear;
 	int _currentmonth;
 	int _numberOfDays;
-	//std:: string _lastDayWeek;
 };
 
