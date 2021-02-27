@@ -28,6 +28,11 @@ public:
 	void displayDay() {}
 	void deleteTaskByName(std::string s) {}
 	void deleteTaskByTime(int time) {}
+	void print(){
+		for (int i= 0; i<_tasks.size();i++){
+			std::cout<<_tasks[i]->getTaskName()<<"\n";
+		}
+	}
 	std::string getNameTaskForPrint(std::string name){
 	
 		if (name.size() == 10) {
