@@ -133,7 +133,6 @@ public:
 	_lastDayWeek+=std::to_string(month);
 	_lastDayWeek+=",";
 	_lastDayWeek+=std::to_string(year);
-	std::cout<<_lastDayWeek<<"\n";
 	return _lastDayWeek;
 	}
 
