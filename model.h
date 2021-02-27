@@ -14,6 +14,9 @@ public:
 	model() {}
 	// virtual DayTask* getTask(DayName d, std::string s) = 0;
 	virtual void setTask(TYPE_TASK typeTask, std::string inputUser) = 0;
+	void setWeek(Week * week){
+		w=week;
+	}
 	//virtual ~model() {}
 	// virtual void deleteTask(std::string s, DayName d) = 0;
 	// virtual std::map<DayName, DayTask*> getWeekTasks() = 0;

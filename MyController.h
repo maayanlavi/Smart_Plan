@@ -17,6 +17,7 @@ public:
 		tasks[Friday] = new Day(Friday);
 		tasks[Saturday] = new Day(Saturday);
 		Week *week = new Week(tasks);
+		_model->setWeek(week);
 		if (typeid(*view) == typeid(MyView)) {
 		((MyView*)view)->setWeek(week);
 		((MyView*)view)->displayTask(Sunday);
