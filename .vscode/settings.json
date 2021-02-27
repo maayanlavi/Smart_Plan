@@ -51,6 +51,7 @@
 		"concepts": "cpp",
 		"atomic": "cpp",
 		"compare": "cpp",
-		"iterator": "cpp"
+		"iterator": "cpp",
+		"sstream": "cpp"
 	}
 }
