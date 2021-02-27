@@ -1,12 +1,21 @@
+#pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Task.h"
-#pragma once
+
 
 
 
 class PermanentTask : public Task {
 public:
+	PermanentTask(){
+		_name="task";
+		_end=14;
+		_start=13;
+		_category=Sport;
+		_dayName=Sunday;
+	}
 	PermanentTask(int start, int end, std::string name, Category category, DayName dayName) : Task(name, category) {
 		_dayName = dayName;
 		_start = start;
@@ -56,6 +65,7 @@ public:
 		catch(...){
  				return false;
 		}
+		return true;
 	}
 
 

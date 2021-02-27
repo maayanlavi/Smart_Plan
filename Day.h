@@ -22,18 +22,18 @@ public:
 	}
 	
 	Day(DayName dayName) {
-		_dayTask = nullptr;
+		_dayTask = new DayTask();
 		_hour = new fullHour();
 		_nameDay = Sunday;
 	}
 	Day() {
-		_dayTask = nullptr;
+		_dayTask = new DayTask();
 		_hour = new fullHour();
 		_nameDay = Sunday;
 	}
-	std::string getNameTaskByStartHour(std::string startHour) {
+	std::string getNameTaskByStartHour(int startHour) {
 		if(_dayTask!=nullptr)
-			return _dayTask->getNameTaskByTimeStart(atoi(startHour.c_str()));
+			return _dayTask->getNameTaskByTimeStart(startHour);
 		else { return "          "; }
 			
 	}
@@ -43,7 +43,7 @@ public:
 		std::cout << "\n----------------------------------------\n";
 		if (_dayTask != nullptr) {
 			for (int i = 0; i < _hour->getNumHour(); i++) {
-				std::cout << _hour->getNameTimeByIndex(i) << _dayTask->getNameTaskByTimeStart(atoi(_hour->getStartTimeByIndex(i).c_str())) << "\n\n";
+				std::cout <<_hour->getNameTimeByIndex(i) << _dayTask->getNameTaskByTimeStart(_hour->getStartTimeByIndex(i)) << "\n\n";
 			}
 			
 		}
