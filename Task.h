@@ -36,9 +36,6 @@ class Task {
 public:
 	Task() {}
 	Task(std::string name, Category category) {}
-	
-
-	
 	std::string enumDayToString(DayName dayName) {
 		switch (dayName) {
 		case Sunday:
@@ -61,13 +58,18 @@ public:
 			break;
 		case Saturday:
 			return "Saturday";
+<<<<<<< HEAD
 			break;
 		
 		default : "eror";
 		
+=======
+			break;	
+>>>>>>> 44d637c37c4c8d480b413cccc72df166b6d27209
 		}
 		
 	}
+	
 	std::string enumCategoryToString(Category category) {
 		switch (category) {
 		case Sport:
