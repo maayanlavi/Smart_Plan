@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "Task.h"
 
 
@@ -46,17 +47,26 @@ public:
  				return false;
 		}
 	}
-std::pair<int, int> schedulingAlgorithm(int deadline){
+std::pair<DayName, int> schedulingAlgorithm(DayName day, int deadline, std::ofstream& file){
 	//TO DO impliment this algoritham
-	//for tests the algoritham return deafult value
+	// //for tests the algoritham return deafult value
+	// std::ifstream infile("MyTasks.txt");
+	// std::string line;
+	// while (std::getline(infile,line))
+	// {
+		
+	// 	const char space[] = "-"; 
+	// 	char *token;
+	// 	//token = strtok(line, space);
 
-	 return std::make_pair(3, 4);
+	//}
+
+	 return std::make_pair(Sunday, 4);
 }
 int getDeadline(){return _HourDeadline;}
 
 friend std::ostream& operator <<(std::ostream& os, const OccasionalTask& o);
 private:
-	
 	int _HourDeadline;
 
 

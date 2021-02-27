@@ -27,7 +27,7 @@ public:
 	// virtual bool CheckPermanentTask(Task* task) = 0;
 	// virtual void getDBWeekTask() = 0;
 	
-private:
+protected:
 Week* w;
 // 	std::map<DayName, DayTask*> _tasks;
 

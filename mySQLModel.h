@@ -2,7 +2,6 @@
 #include "model.h"
 #include "observable.h"
 #include <fstream>
-// #include <sql.h>
 
 #pragma once
 
@@ -13,6 +12,7 @@ public:
 	mySQLModel(): model(),observable(){
 		
 		myfile.open ("MyTasks.txt", std::ofstream::app);
+		
 	}
 
 	void saveTaskToFile(std::string taskToFile);

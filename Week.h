@@ -24,6 +24,7 @@ public:
 		_weekDay = now->tm_wday;
 		_currentYear = now->tm_year;
 		_currentmonth = now->tm_mon;
+		
 		_numberOfDays = getNumberOfDays(now->tm_mon + 1, now->tm_year);
 	}
 	Week(std::map <DayName, Day*> tasks) {
@@ -33,8 +34,8 @@ public:
 		struct tm * now = localtime(&t);
 		_currentDay = now->tm_mday;
 		_weekDay = now->tm_wday;
-		_currentYear = now->tm_year;
-		_currentmonth = now->tm_mon;
+		_currentYear = now->tm_year+ 1900;
+		_currentmonth = now->tm_mon+1;
 		_numberOfDays = getNumberOfDays(now->tm_mon + 1, now->tm_year);
 		
 	}
@@ -63,6 +64,7 @@ public:
 	}
 	
 	void displayWeek() {
+		std::cout<<"year: "<<_currentYear<<"\n";
 		int day = _currentDay;
 		int weekDay = _weekDay;
 		for (int i = 0; i < 7; i++) {
@@ -105,7 +107,7 @@ public:
 	Day* getDayTaskByNameOfDay(DayName dayName) {
 		return _tasks[dayName];
 	}
-void getLastDatWeek(){
+	std::string getLastWeek(){
 		int day=_currentDay;
 		int month=_currentmonth;
 		int year=_currentYear;
@@ -114,7 +116,7 @@ void getLastDatWeek(){
 		for (int i = 0; i < 7; i++) {
 			if (day >numDay) {
 				day = 1;
-				month +=1;
+				month=month+1;
 			if(month >12 ){
 				year=year+1;
 				month=1;
@@ -122,8 +124,16 @@ void getLastDatWeek(){
 			}
 			day++;
 		}
-	_lastDayWeek = std::to_string(day)+","+std::to_string(month)+","+std::to_string(year);
+	std::string _lastDayWeek;
+	_lastDayWeek = std::to_string(day);
+	_lastDayWeek+=",";
+	_lastDayWeek+=std::to_string(month);
+	_lastDayWeek+=",";
+	_lastDayWeek+=std::to_string(year);
+	std::cout<<_lastDayWeek<<"\n";
+	return _lastDayWeek;
 	}
+
 private:
 	std::map<DayName, Day*> _tasks;
 	Hour *_hour;
@@ -132,6 +142,6 @@ private:
 	int _currentYear;
 	int _currentmonth;
 	int _numberOfDays;
-	std:: string _lastDayWeek;
+	//std:: string _lastDayWeek;
 };
 
