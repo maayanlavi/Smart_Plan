@@ -117,13 +117,15 @@ public:
 	Day* getDayTaskByNameOfDay(DayName dayName) {
 		return _tasks[dayName];
 	}
-	std::string getLastWeek(){
+	std::vector<std::string> getLastWeek(){
+		std::vector<std::string> alldateWeek;
 		int day=_currentDay;
 		int month=_currentmonth;
 		int year=_currentYear;
 		int numDay=_numberOfDays;
 		
 		for (int i = 0; i < 7; i++) {
+			std::string _lastDayWeek;
 			if (day >numDay) {
 				day = 1;
 				month=month+1;
@@ -132,18 +134,52 @@ public:
 				month=1;
 			}
 			}
-			day++;
+				_lastDayWeek = std::to_string(day);
+				_lastDayWeek+=",";
+				_lastDayWeek+=std::to_string(month);
+				_lastDayWeek+=",";
+				_lastDayWeek+=std::to_string(year);
+				std::cout<<_lastDayWeek<<"\n";
+			    alldateWeek.push_back(_lastDayWeek);
+				day++;
 		}
-	std::string _lastDayWeek;
-	_lastDayWeek = std::to_string(day);
-	_lastDayWeek+=",";
-	_lastDayWeek+=std::to_string(month);
-	_lastDayWeek+=",";
-	_lastDayWeek+=std::to_string(year);
-	std::cout<<_lastDayWeek<<"\n";
-	return _lastDayWeek;
+	
+	return alldateWeek;
 	}
+std::string getFulldateTask(DayName n){
+	int theMonth=-1;
+	int dayinmonth=-1;
+	int year=-1;
+	int numDay= dayNameToint(n);
+	int numDayMonth=numDay-_weekDay;
+	if(numDayMonth<0){
+		numDayMonth=7+numDay-_weekDay;
+	}
+	int dayinmonth=numDayMonth+_currentDay;
+	if(dayinmonth>_numberOfDays){
+		theMonth=_currentmonth+1;
+		if(theMonth>12){
+			year=year+1;
+			theMonth=1;
+		}
+		else{
+			year=_currentYear;
+		}
+		dayinmonth=dayinmonth-_numberOfDays;
+	}
+	else{
+		theMonth=_currentmonth;
+		dayinmonth=dayinmonth-_numberOfDays;
+	}
+		std::string stringDate;
+		stringDate = std::to_string(dayinmonth);
+		stringDate+=",";
+		stringDate+=std::to_string(theMonth);
+		stringDate+=",";
+		stringDate=std::to_string(year);
+		return stringDate;
 
+}
 private:
 	std::map<DayName, Day*> _tasks;
 	Hour *_hour;
@@ -153,5 +189,17 @@ private:
 	int _currentmonth;
 	int _numberOfDays;
 	//std:: string _lastDayWeek;
+	int dayNameToint(DayName n){
+		if(n==Sunday){
+			return 1;
+		}
+		if(n==Monday){return 2;}
+		if(n==Tuesday){return 3;}	
+		if(n==Wednesday){return 4;}
+		if(n==Thursday){return 5;}
+		if(n== Friday){return 6;}
+		if(n==Saturday){return 7;}
+		else{return -1;}
+	}
 };
 
