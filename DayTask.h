@@ -4,9 +4,9 @@
 #include <string>
 #include<memory>
 #include "model.h"
-#include "Task.h"
+#include "PermanentTask.h"
 #include "fullHour.h"
-#pragma once
+
 
 class DayTask {
 
@@ -14,10 +14,14 @@ public:
 	DayTask(std::vector<Task*> tasks) {
 		_tasks=tasks;
 	}
-	DayTask() {}
+	DayTask() {
+		PermanentTask * p =new PermanentTask();
+		_tasks.push_back(p);
+
+	}
 	void setTask(Task* t) {}
-	Task* getTask(int time) {}
-	std::vector<Task*> getTaskDay() {}
+	// Task* getTask(int time) {}
+	// std::vector<Task*> getTaskDay() {}
 	void displayDay() {}
 	void deleteTaskByName(std::string s) {}
 	void deleteTaskByTime(int time) {}
@@ -39,6 +43,7 @@ public:
 	}
 	std::string getNameTaskByTimeStart(int startTime) {
 		for (int i = 0; i < _tasks.size(); i++) {
+			
 			if (startTime == _tasks[i]->getTaskStart()) {
 				return getNameTaskForPrint(_tasks[i]->getTaskName());
 				

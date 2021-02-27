@@ -36,8 +36,11 @@ public:
 		_currentYear = now->tm_year;
 		_currentmonth = now->tm_mon;
 		_numberOfDays = getNumberOfDays(now->tm_mon + 1, now->tm_year);
+		
 	}
+		
 	int getCurrentNumDay() { return _currentDay; }
+	
 	int  getNumberOfDays(int month, int year)
 	{
 		//leap year condition, if month is 2
@@ -55,6 +58,7 @@ public:
 		else
 			return 30;
 	}
+	
 	void displayWeek() {
 		int day = _currentDay;
 		int weekDay = _weekDay;
@@ -77,7 +81,7 @@ public:
 		}
 		std::cout << "\n--------------------------------------------------------------------------------------------------------------\n";
 		for (int i = 0; i < _hour->getNumHour(); i++) {
-			std::string startTime = _hour->getStartTimeByIndex(i);
+			int startTime = _hour->getStartTimeByIndex(i);
 			std::cout << _hour->getNameTimeByIndex(i)
 				<< _tasks[Sunday]->getNameTaskByStartHour(startTime)
 				<< _tasks[Monday]->getNameTaskByStartHour(startTime)
@@ -98,7 +102,31 @@ public:
 	Day* getDayTaskByNameOfDay(DayName dayName) {
 		return _tasks[dayName];
 	}
-
+	std::string getLastWeek(){
+		int day=_currentDay;
+		int month=_currentmonth;
+		int year=_currentYear;
+		int numDay=_numberOfDays;
+		
+		for (int i = 0; i < 7; i++) {
+			if (day >numDay) {
+				day = 1;
+				month +=1;
+			if(month >12 ){
+				year=year+1;
+				month=1;
+			}
+			}
+			day++;
+		}
+	std::string _lastDayWeek;
+	_lastDayWeek = std::to_string(day);
+	_lastDayWeek+=",";
+	_lastDayWeek+=std::to_string(month);
+	_lastDayWeek+=",";
+	_lastDayWeek+=std::to_string(year);
+	return _lastDayWeek;
+	}
 private:
 	std::map<DayName, Day*> _tasks;
 	Hour *_hour;
@@ -107,5 +135,6 @@ private:
 	int _currentYear;
 	int _currentmonth;
 	int _numberOfDays;
+	//std:: string _lastDayWeek;
 };
 

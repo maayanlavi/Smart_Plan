@@ -49,20 +49,17 @@ public:
 	}
 std::pair<DayName, int> schedulingAlgorithm(DayName day, int deadline, std::ofstream& file){
 	//TO DO impliment this algoritham
-	//for tests the algoritham return deafult value
-	std::ifstream infile("MyTasks.txt");
-	std::string line;
-	while (std::getline(infile,line))
-	{
+	// //for tests the algoritham return deafult value
+	// std::ifstream infile("MyTasks.txt");
+	// std::string line;
+	// while (std::getline(infile,line))
+	// {
 		
-		const char space[] = "-"; 
-		char *token;
-		//token = strtok(line, space);
+	// 	const char space[] = "-"; 
+	// 	char *token;
+	// 	//token = strtok(line, space);
 
-	}
-
-
-	
+	//}
 
 	 return std::make_pair(Sunday, 4);
 }

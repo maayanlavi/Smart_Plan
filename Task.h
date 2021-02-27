@@ -60,6 +60,7 @@ public:
 			return "Saturday";
 			break;	
 		}
+		
 	}
 	
 	std::string enumCategoryToString(Category category) {
@@ -79,6 +80,7 @@ public:
 		case Work:
 			return "work";
 			break;
+		default : "error";
 		}
 	}
 	std::vector<std::string> split(std::string str, std::string sep) {

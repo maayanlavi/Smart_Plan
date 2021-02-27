@@ -19,10 +19,9 @@ public:
 	std::string getNameTimeByIndex(int index) {
 		return _AllHoure.at(index);
 	}
-	std::string getStartTimeByIndex(int index) {
-		std::string hour = _AllHoure[index];
-		int pos = hour.find("-");
-		return hour.substr(0, pos);
+	int getStartTimeByIndex(int index) {
+		int hour = atoi(_AllHoure[index].c_str());
+		return hour;
 
 	}
 protected:

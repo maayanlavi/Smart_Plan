@@ -3,13 +3,28 @@
 #include "OccasionalTask.h"
 #include "PermanentTask.h"
 #include "mySQLModel.h"
+
 class MyController : Controller {
 public:
 	MyController(model* model, view* view) : Controller(model, view) {
+		std::map<DayName, Day*> tasks;
 		
+		tasks[Sunday]= new Day(Sunday);
+		tasks[Monday] = new Day(Monday);
+		tasks[Tuesday] = new Day(Tuesday);
+		tasks[Wednesday] = new Day(Wednesday);
+		tasks[Thursday] = new Day(Thursday);
+		tasks[Friday] = new Day(Friday);
+		tasks[Saturday] = new Day(Saturday);
+		Week *week = new Week(tasks);
+		if (typeid(*view) == typeid(MyView)) {
+		((MyView*)view)->setWeek(week);
+		((MyView*)view)->displayTask(Sunday);
+		
+
+	}
 		start();
 	}
-
 	virtual void start() {
 		std::string input;
 		std::string inputB;

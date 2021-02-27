@@ -48,6 +48,9 @@
 		"xloctime": "cpp",
 		"fstream": "cpp",
 		"cctype": "cpp",
-		"concepts": "cpp"
+		"concepts": "cpp",
+		"atomic": "cpp",
+		"compare": "cpp",
+		"iterator": "cpp"
 	}
 }

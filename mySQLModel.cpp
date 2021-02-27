@@ -42,6 +42,7 @@
             mergeTask+=std::to_string(end);
             mergeTask+=strDay;
             mergeTask+=strCat;
+            std::cout << w->getLastWeek();
             saveTaskToFile(mergeTask);
 		}
 		else{
