@@ -41,12 +41,20 @@
 			std::string strDay = task->enumDayToString(day);
 			std::string strCat = task->enumCategoryToString(category);         
 			std::string mergeTask;
-            mergeTask+= name+std::to_string(start);
+            mergeTask+= w->getLastWeek();
+            mergeTask+='.';
+            mergeTask+= name;
+            mergeTask+='.';
+            mergeTask+=std::to_string(start);
+            mergeTask+='.';
             mergeTask+=std::to_string(end);
+            mergeTask+='.';
             mergeTask+=strDay;
+            mergeTask+='.';
             mergeTask+=strCat;
-            std::cout << w->getLastWeek();
             saveTaskToFile(mergeTask);
+            std::cout << "the Task added successfully!" << std::endl;
+
 		}
 		else{
 			OccasionalTask* task= new OccasionalTask(inputUser);
@@ -60,12 +68,17 @@
 			std::string strDay = task->enumDayToString(day);
 			std::string strCat = task->enumCategoryToString(category);
 			std::string mergeTask;
+            mergeTask+= w->getLastWeek();
+            mergeTask+='.';
             mergeTask+=name+std::to_string(start);
+            mergeTask+='.';
             mergeTask+=std::to_string(end);
+            mergeTask+='.';
             mergeTask+=strDay;
+            mergeTask+='.';
             mergeTask+=strCat;
-			std::cout<<mergeTask;
             saveTaskToFile(mergeTask);
+            std::cout << "the Task added successfully!" << std::endl;
 
 		}
         std::cout<<"print after add "<<"\n";

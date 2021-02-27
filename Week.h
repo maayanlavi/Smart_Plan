@@ -143,6 +143,7 @@ public:
 			    alldateWeek.push_back(_lastDayWeek);
 				day++;
 		}
+<<<<<<< HEAD
 	
 	return alldateWeek;
 	}
@@ -154,6 +155,15 @@ std::string getFulldateTask(DayName n){
 	int numDayMonth=numDay-_weekDay;
 	if(numDayMonth<0){
 		numDayMonth=7+numDay-_weekDay;
+=======
+	std::string _lastDayWeek;
+	_lastDayWeek = std::to_string(day);
+	_lastDayWeek+=",";
+	_lastDayWeek+=std::to_string(month);
+	_lastDayWeek+=",";
+	_lastDayWeek+=std::to_string(year);
+	return _lastDayWeek;
+>>>>>>> e03267c5462ce2e9c0dfd67ac6ec80bb7fee03e9
 	}
 	int dayinmonth=numDayMonth+_currentDay;
 	if(dayinmonth>_numberOfDays){
