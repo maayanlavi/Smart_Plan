@@ -2,6 +2,8 @@
 #include "model.h"
 #include "observable.h"
 #include <fstream>
+#include <sstream>
+
 
 #pragma once
 
@@ -42,6 +44,7 @@ public:
 	Task loadFromFile();
 	virtual void setTask(TYPE_TASK typeTask, std::string inputUser);
 	virtual ~mySQLModel() { myfile.close(); }
+	std::vector<std::string> allTasksFromFile ();
 
 private:
 	std::ofstream myfile;

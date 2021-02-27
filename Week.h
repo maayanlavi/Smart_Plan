@@ -105,10 +105,7 @@ public:
 				<< _tasks[Thursday]->getNameTaskByStartHour(startTime)
 				<< _tasks[Friday]->getNameTaskByStartHour(startTime)
 				<< _tasks[Saturday]->getNameTaskByStartHour(startTime) << "\n\n";
-		
 		}
-	
-	
 	}
 	void displayCommand() {
 		std::cout << "Enter d to display one Day" << std::endl;
@@ -143,7 +140,6 @@ public:
 			    alldateWeek.push_back(_lastDayWeek);
 				day++;
 		}
-<<<<<<< HEAD
 	
 	return alldateWeek;
 	}
@@ -155,17 +151,8 @@ std::string getFulldateTask(DayName n){
 	int numDayMonth=numDay-_weekDay;
 	if(numDayMonth<0){
 		numDayMonth=7+numDay-_weekDay;
-=======
-	std::string _lastDayWeek;
-	_lastDayWeek = std::to_string(day);
-	_lastDayWeek+=",";
-	_lastDayWeek+=std::to_string(month);
-	_lastDayWeek+=",";
-	_lastDayWeek+=std::to_string(year);
-	return _lastDayWeek;
->>>>>>> e03267c5462ce2e9c0dfd67ac6ec80bb7fee03e9
 	}
-	int dayinmonth=numDayMonth+_currentDay;
+	dayinmonth=numDayMonth+_currentDay;
 	if(dayinmonth>_numberOfDays){
 		theMonth=_currentmonth+1;
 		if(theMonth>12){
@@ -186,7 +173,7 @@ std::string getFulldateTask(DayName n){
 		stringDate+=",";
 		stringDate+=std::to_string(theMonth);
 		stringDate+=",";
-		stringDate=std::to_string(year);
+		stringDate+=std::to_string(year);
 		return stringDate;
 
 }
@@ -198,7 +185,6 @@ private:
 	int _currentYear;
 	int _currentmonth;
 	int _numberOfDays;
-	//std:: string _lastDayWeek;
 	int dayNameToint(DayName n){
 		if(n==Sunday){
 			return 1;

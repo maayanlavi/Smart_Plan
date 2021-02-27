@@ -41,7 +41,7 @@
 			std::string strDay = task->enumDayToString(day);
 			std::string strCat = task->enumCategoryToString(category);         
 			std::string mergeTask;
-            mergeTask+= w->getLastWeek();
+            mergeTask+= w->getFulldateTask(day);
             mergeTask+='.';
             mergeTask+= name;
             mergeTask+='.';
@@ -68,7 +68,7 @@
 			std::string strDay = task->enumDayToString(day);
 			std::string strCat = task->enumCategoryToString(category);
 			std::string mergeTask;
-            mergeTask+= w->getLastWeek();
+            mergeTask+= w->getFulldateTask(day);
             mergeTask+='.';
             mergeTask+=name+std::to_string(start);
             mergeTask+='.';
@@ -84,3 +84,15 @@
         std::cout<<"print after add "<<"\n";
 		w->printTask();		
 	}
+
+std::vector<std::string> mySQLModel::allTasksFromFile() {
+    std::vector<std::string> res;
+    std::string line;
+    std::ifstream infile("MyTask.txt");
+    while (std::getline(infile, line))
+    {
+        res.push_back(line);
+    }
+    return res;
+
+}
