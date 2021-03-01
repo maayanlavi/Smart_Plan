@@ -2,11 +2,11 @@
 #include <iomanip>
 #include "MyView.h"
 #include "MyController.h"
-#include "mySQLModel.cpp"
+#include "MyModel.cpp"
 int main()
 {	
 	std::cout<<"fdsfdsf";
-	mySQLModel* mo = new mySQLModel();
+	MyModel* mo = new MyModel();
 	MyView *v = new MyView();
 	MyController* c= new MyController(mo,v);
 }
