@@ -9,7 +9,7 @@
 
 class PermanentTask;
 class OccasionalTask;
-class mySQLModel : public model, public observable
+class MyModel : public model, public observable
 {
 public:
 	mySQLModel() : model(), observable()
