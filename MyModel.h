@@ -12,7 +12,7 @@ class OccasionalTask;
 class MyModel : public model, public observable
 {
 public:
-	mySQLModel() : model(), observable()
+	MyModel() : model(), observable()
 	{
 
 		myfile.open("MyTasks.txt", std::ofstream::app);
@@ -43,7 +43,7 @@ public:
 
 	Task loadFromFile();
 	virtual void setTask(TYPE_TASK typeTask, std::string inputUser);
-	virtual ~mySQLModel() { myfile.close(); }
+	virtual ~MyModel() { myfile.close(); }
 	std::vector<std::string> allTasksFromFile ();
 
 private:
