@@ -1,9 +1,9 @@
-#include "mySQLModel.h"
+#include "MyModel.h"
 
-	void mySQLModel::saveTaskToFile(std::string taskToFile)
+	void MyModel::saveTaskToFile(std::string taskToFile)
     {
         myfile << taskToFile << std::endl;
-        this->~mySQLModel();
+        this->~MyModel();
     }
 
 	// Task mySQLModel::loadFromFile() {
@@ -27,7 +27,7 @@
 	// 			}	
 	// 	}
 
-	void mySQLModel::setTask(TYPE_TASK typeTask, std::string inputUser){
+	void MyModel::setTask(TYPE_TASK typeTask, std::string inputUser){
 		w->printTask();
 		if(typeTask == Permanent){
 			
@@ -85,7 +85,7 @@
 		w->printTask();		
 	}
 
-std::vector<std::string> mySQLModel::allTasksFromFile() {
+std::vector<std::string> MyModel::allTasksFromFile() {
     std::vector<std::string> res;
     std::string line;
     std::ifstream infile("MyTask.txt");
