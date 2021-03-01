@@ -2,7 +2,7 @@
 #include "Controller.h"
 #include "OccasionalTask.h"
 #include "PermanentTask.h"
-#include "mySQLModel.h"
+#include "MyModel.h"
 
 class MyController : Controller {
 public:
