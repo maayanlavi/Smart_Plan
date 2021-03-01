@@ -5,7 +5,6 @@
 #include "MyModel.cpp"
 int main()
 {	
-	std::cout<<"fdsfdsf";
 	MyModel* mo = new MyModel();
 	MyView *v = new MyView();
 	MyController* c= new MyController(mo,v);
